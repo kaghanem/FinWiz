@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-print("message")
-=======
-
 from flask import Flask, request, jsonify
 import subprocess
 
@@ -47,4 +43,3 @@ def chat():
 
 #if __name__ == "__main__":
 #    app.run(debug=True)
->>>>>>> refs/remotes/origin/main
