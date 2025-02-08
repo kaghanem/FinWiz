@@ -1,1 +1,25 @@
+<!-- frontend/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>FinWiz - Your Financial Wizard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <div class="chat-container">
+    <h1>FinWiz</h1>
+    <p class="subtitle">Summon your personal financial wizard</p>
 
+    <div id="chat-window">
+     <!-- Chat messages will appear here -->
+    </div>
+    <div class="input-container">
+        <input type="text" id="user-input" placeholder="Ask for guidance..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+  
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
