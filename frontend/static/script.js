@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         const data = await response.json();
         // Display the bot's reply
-        addMessage(data.reply, "bot");
+        addMessage(data.response, "bot");
       } catch (error) {
         console.error("Error:", error);
         addMessage(error, "bot");
