@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import subprocess
+import re
 
 app = Flask(__name__, static_folder="C:/Users/salem/git/FinWiz/frontend/static", template_folder="C:/Users/salem/git/FinWiz/frontend/templates")
 
@@ -24,6 +25,9 @@ def generate_response(prompt):
             response = "No response from AI."
 
         print(f"AI Response: {response}")  # Debugging output
+
+        response = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL).strip()
+
     except subprocess.CalledProcessError as e:
         response = f"Error generating response: {e}"
 
