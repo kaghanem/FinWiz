@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import subprocess
 
-app = Flask(__name__, static_folder="C:\Users\salem\git\FinWiz\frontend\static", template_folder="C:\Users\salem\git\FinWiz\frontend\templates")
+app = Flask(__name__, static_folder="C:/Users/salem/git/FinWiz/frontend/static", template_folder="C:/Users/salem/git/FinWiz/frontend/templates")
 
 def generate_response(prompt):
     """
@@ -9,15 +9,21 @@ def generate_response(prompt):
     Make sure that Ollama is installed and Deepseek is set up locally.
     """
     # Construct the command to call Deepseek via Ollama
-    construct = ["ollama", "create", "FinWiz", "-f", r"C:\Users\salem\git\FinWiz\backend\Modelfile"]
-    command = ["ollama", "run", "FinWiz", "--prompt", prompt]
+    construct = ["ollama", "create", "FinWiz", "-f", "C:/Users/salem/git/FinWiz/backend/Modelfile"]
+    command = ["ollama", "run", "FinWiz", prompt]
+
 
     try:
         # Run the command and capture the output
         subprocess.run(construct)
-        result = subprocess.run(command, capture_output=True, text=True, check=True)
+        print(f"Running command: {' '.join(command)}")  # Debugging
+        result = subprocess.run(command,shell=True, capture_output=True, text=True, check=True)
         # The response is expected in stdout
         response = result.stdout.strip()
+        if not response:
+            response = "No response from AI."
+
+        print(f"AI Response: {response}")  # Debugging output
     except subprocess.CalledProcessError as e:
         response = f"Error generating response: {e}"
 
@@ -26,6 +32,7 @@ def generate_response(prompt):
 @app.route("/chat", methods=["POST"])
 def chat():
     """
+
     API endpoint to receive a user message and return a chatbot response.
     """
     data = request.get_json()
@@ -38,9 +45,12 @@ def chat():
     return jsonify({"response": response_text})
 
 # Optionally, serve the frontend from the Flask app
-@app.route("/")
+@app.route('/')
 def home():
-    return app.send_static_file("index.html")
+    
+    return render_template("index.html")
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    
+    app.run(debug=True, port=5000)
