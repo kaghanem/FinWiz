@@ -9,8 +9,7 @@ body {
   color: #fff;
   min-height: 100vh;
   /* Optional starry background effect (simple sparkles) */
-  background-image: url("{{ url_for('static', filename='static/stars.png') }}"); /* if you have a starry texture */
-  background-repeat: repeat;
+  background-image: url("{{ url_for('static', filename='static/stars.png') }}"); /* if you have a starry texture */  background-repeat: repeat;
 }
 
 /* Header with wizard image & title */
