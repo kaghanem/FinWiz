@@ -1,14 +1,13 @@
 // frontend/static/script.js
-
 document.addEventListener("DOMContentLoaded", () => {
-    const smokeOverlay = document.getElementById("smoke-overlay");
-    const mainContent = document.getElementById("main-content");
+  const smokeOverlay = document.getElementById("smoke-overlay");
+  const mainContent = document.getElementById("main-content");
 
-    // Wait for animation to complete before showing the page
-    setTimeout(() => {
-        smokeOverlay.style.display = "none";
-        mainContent.style.opacity = "1";
-    }, 3500);
+  // Wait for animation to complete before revealing content
+  setTimeout(() => {
+      smokeOverlay.style.display = "none";
+      mainContent.style.opacity = "1";
+  }, 3000);
 
   const chatWindow = document.getElementById("chat-window");
   const userInput = document.getElementById("user-input");

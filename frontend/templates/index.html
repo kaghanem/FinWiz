@@ -8,14 +8,13 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-  <!-- 🔥 Smoke Animation Overlay -->
+  <!-- 🔥 Smoke Curtain Animation -->
   <div id="smoke-overlay">
-    <div class="smoke" style="top: 40%; left: 20%;"></div>
-    <div class="smoke" style="top: 45%; left: 50%;"></div>
-    <div class="smoke" style="top: 50%; left: 80%;"></div>
+    <div class="smoke-left"></div>
+    <div class="smoke-right"></div>
   </div>
 
-  <!-- 🌟 Main Content (Initially Hidden) -->
+  <!-- 🌟 Main Content (Hidden Until Animation Ends) -->
   <div id="main-content">
     <div class="wizard-header">
       <img src="{{ url_for('static', filename='wizard.png') }}" alt="Wizard Avatar" class="wizard-avatar"/>
