@@ -1,34 +1,34 @@
-<!-- frontend/templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>FinWiz - Your Financial Wizard</title>
-
-  <!-- Google Fonts: MedievalSharp for a fantasy vibe -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
-
-  <!-- Wizard Hat Favicon (Optional) -->
-  <!-- <link rel="icon" href="{{ url_for('static', filename='images/wizard-hat.png') }}" /> -->
-
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-  <!-- Optional Wizard Avatar / Decorative Header -->
-  <div class="wizard-header">
-    <img src="{{ url_for('static', filename='static/wizard.png') }}" alt="Wizard Avatar" class="wizard-avatar"/>
-    <h1>FinWiz</h1>
-    <p class="subtitle">Summon Your Personal Financial Wizard</p>
+  <!-- 🔥 Smoke Animation Overlay -->
+  <div id="smoke-overlay">
+    <div class="smoke" style="top: 40%; left: 20%;"></div>
+    <div class="smoke" style="top: 45%; left: 50%;"></div>
+    <div class="smoke" style="top: 50%; left: 80%;"></div>
   </div>
 
-  <div class="chat-container">
-    <div id="chat-window"><!-- Chat messages will appear here --></div>
+  <!-- 🌟 Main Content (Initially Hidden) -->
+  <div id="main-content">
+    <div class="wizard-header">
+      <img src="{{ url_for('static', filename='wizard.png') }}" alt="Wizard Avatar" class="wizard-avatar"/>
+      <h1>FinWiz</h1>
+      <p class="subtitle">Summon Your Personal Financial Wizard</p>
+    </div>
 
-    <div class="input-container">
-      <input type="text" id="user-input" placeholder="Ask for guidance..." />
-      <button id="send-btn">Send</button>
+    <div class="chat-container">
+      <div id="chat-window"></div>
+      <div class="input-container">
+        <input type="text" id="user-input" placeholder="Ask for guidance..." />
+        <button id="send-btn">Send</button>
+      </div>
     </div>
   </div>
 
