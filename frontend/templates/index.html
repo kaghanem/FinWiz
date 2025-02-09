@@ -2,24 +2,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>FinWiz - Your Financial Wizard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <meta charset="UTF-8" />
+  <title>FinWiz - Your Financial Wizard</title>
+
+  <!-- Google Fonts: MedievalSharp for a fantasy vibe -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
+
+  <!-- Wizard Hat Favicon (Optional) -->
+  <!-- <link rel="icon" href="{{ url_for('static', filename='images/wizard-hat.png') }}" /> -->
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
-    <div class="chat-container">
+  <!-- Optional Wizard Avatar / Decorative Header -->
+  <div class="wizard-header">
+    <img src="{{ url_for('static', filename='images/wizard.png') }}" alt="Wizard Avatar" class="wizard-avatar"/>
     <h1>FinWiz</h1>
-    <p class="subtitle">Summon your personal financial wizard</p>
+    <p class="subtitle">Summon Your Personal Financial Wizard</p>
+  </div>
 
-    <div id="chat-window">
-     <!-- Chat messages will appear here -->
-    </div>
+  <div class="chat-container">
+    <div id="chat-window"><!-- Chat messages will appear here --></div>
+
     <div class="input-container">
-        <input type="text" id="user-input" placeholder="Ask for guidance..." />
-        <button id="send-btn">Send</button>
-      </div>
+      <input type="text" id="user-input" placeholder="Ask for guidance..." />
+      <button id="send-btn">Send</button>
     </div>
-  
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

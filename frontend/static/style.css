@@ -1,75 +1,174 @@
 /* frontend/static/styles.css */
 
+/* Use the fantasy font from Google Fonts */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #3c1053, #ad5389); /* purplish gradient */
-    color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'MedievalSharp', cursive; /* fallback will be cursive if not loaded */
+  background: linear-gradient(to bottom right, #3c1053, #ad5389);
+  color: #fff;
+  min-height: 100vh;
+  /* Optional starry background effect (simple sparkles) */
+  background-image: url("{{ url_for('static', filename='images/stars.png') }}"); /* if you have a starry texture */
+  background-repeat: repeat;
+}
+
+/* Header with wizard image & title */
+.wizard-header {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.wizard-avatar {
+  max-width: 80px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.wizard-header h1 {
+  font-size: 3rem;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  color: #f8e9ff;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #e0c3fc;
+  margin-top: 5px;
+}
+
+/* Container for the entire chat area */
+.chat-container {
+  max-width: 600px;
+  margin: 20px auto 50px auto;
+  padding: 0 20px;
+}
+
+/* Chat window: messages appear here */
+#chat-window {
+  height: 450px;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 2px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  transition: background-color 0.5s ease;
+}
+
+/* On hover, the chat window glows slightly */
+#chat-window:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Chat messages */
+.message {
+  margin: 10px 0;
+  max-width: 70%;
+  line-height: 1.4;
+  padding: 10px 15px;
+  border-radius: 15px;
+  animation: bubblePop 0.3s ease-out;
+  position: relative;
+  white-space: pre-wrap; /* allow multiline messages */
+}
+
+/* Bubble styles for user vs. bot */
+.message.user {
+  background-color: #6c63ff;
+  color: #fff;
+  margin-left: auto;
+  text-align: left;
+  border-top-right-radius: 0;
+}
+
+.message.bot {
+  background-color: #7d5ba6;
+  color: #fff;
+  margin-right: auto;
+  text-align: left;
+  border-top-left-radius: 0;
+}
+
+/* Little "tail" on each bubble – optional */
+.message.user::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid #6c63ff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.message.bot::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid #7d5ba6;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+/* Simple "pop" animation for new messages */
+@keyframes bubblePop {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
   }
-  
-  .chat-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0;
-  }
-  
-  .subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #ddd;
-  }
-  
-  #chat-window {
-    height: 400px;
-    overflow-y: auto;
-    padding: 10px;
-    border: 1px solid #fff;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  
-  .message {
-    margin: 10px 0;
-  }
-  
-  .message.user {
-    text-align: right;
-  }
-  
-  .message.bot {
-    text-align: left;
-  }
-  
-  .input-container {
-    display: flex;
-    gap: 10px;
-  }
-  
-  #user-input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  #send-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #6c63ff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  #send-btn:hover {
-    background-color: #5c52d0;
-  }  
+}
+
+/* Input area */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1rem;
+  color: #333;
+}
+
+#user-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+#send-btn {
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #a37acf; 
+  color: #fff;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 0 #80599c; /* Some dimension to the button */
+}
+
+#send-btn:hover {
+  background-color: #8e5bcc;
+}
