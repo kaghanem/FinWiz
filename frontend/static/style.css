@@ -11,7 +11,7 @@ body {
   background-size: cover;
 }
 
-/* 🔥 Smoke Curtain Overlay */
+/* Smoke Curtain Overlay */
 #smoke-overlay {
   position: fixed;
   top: 0;
@@ -22,7 +22,7 @@ body {
   display: flex;
 }
 
-/* 🔥 Left Half of the Smoke */
+/* Left Half of the Smoke */
 .smoke-left {
   position: absolute;
   width: 50%;
@@ -33,7 +33,7 @@ body {
   animation: splitLeft 2.5s ease-in-out forwards;
 }
 
-/* 🔥 Right Half of the Smoke */
+/* Right Half of the Smoke */
 .smoke-right {
   position: absolute;
   width: 50%;
@@ -44,19 +44,19 @@ body {
   animation: splitRight 2.5s ease-in-out forwards;
 }
 
-/* 🔥 Animation: Left Side Moves Out */
+/* Animation: Left Side Moves Out */
 @keyframes splitLeft {
   0% { transform: scaleX(1); opacity: 1; }
   100% { transform: translateX(-100%) scaleX(1.5); opacity: 0; }
 }
 
-/* 🔥 Animation: Right Side Moves Out */
+/* Animation: Right Side Moves Out */
 @keyframes splitRight {
   0% { transform: scaleX(1); opacity: 1; }
   100% { transform: translateX(100%) scaleX(1.5); opacity: 0; }
 }
 
-/* 🔥 Smooth Camera Zoom into Website */
+/* Smooth Camera Zoom into Website */
 #main-content {
   opacity: 0;
   transform: scale(0.85);
