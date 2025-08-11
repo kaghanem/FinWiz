@@ -37,4 +37,3 @@
 | **Frontend** | HTML, CSS, JavaScript (with custom animations) |
 | **AI**       | DeepSeek AI |
 | **Tools**    | Git, GitHub |
-| **Deployment** | *(Add hosting platform if applicable)* |
