@@ -1,12 +1,12 @@
 # 💰 FinWiz – Your AI-Powered Financial Wizard 🧙‍♂️✨
 
-![GitHub last commit](https://img.shields.io/github/last-commit/YourUsername/FinWiz?color=blue&style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/YourUsername/FinWiz?color=success&style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/YourUsername/FinWiz?color=yellow&style=for-the-badge)
-![GitHub stars](https://img.shields.io/github/stars/YourUsername/FinWiz?color=orange&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/kaghanem/FinWiz?color=blue&style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/kaghanem/FinWiz?color=success&style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/kaghanem/FinWiz?color=yellow&style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/kaghanem/FinWiz?color=orange&style=for-the-badge)
 
 > 🚀 **FinWiz** is an AI-driven chatbot delivering **personalized financial advice**, **investment insights**, and **budgeting recommendations** — all in **real time**.  
-> 💡 Built in **48 hours during a hackathon**, it’s designed to make money management **smart, fast, and fun**.
+> 💡 Built in **24 hours during a hackathon**, it’s designed to make money management **smart, fast, and fun**.
 
 ---
 
