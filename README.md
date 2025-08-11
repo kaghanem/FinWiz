@@ -1,10 +1,5 @@
 # 💰 FinWiz – Your AI-Powered Financial Wizard 🧙‍♂️✨
 
-![GitHub last commit](https://img.shields.io/github/last-commit/kaghanem/FinWiz?color=blue&style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/kaghanem/FinWiz?color=success&style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/kaghanem/FinWiz?color=yellow&style=for-the-badge)
-![GitHub stars](https://img.shields.io/github/stars/kaghanem/FinWiz?color=orange&style=for-the-badge)
-
 > 🚀 **FinWiz** is an AI-driven chatbot delivering **personalized financial advice**, **investment insights**, and **budgeting recommendations** — all in **real time**.  
 > 💡 Built in **24 hours during a hackathon**, it’s designed to make money management **smart, fast, and fun**.
 
@@ -30,8 +25,7 @@
 
 ## 📸 Sneak Peek
 
-> 🎥 *GIF/Video Demo Coming Soon!*  
-> *(Insert your chatbot & smoke reveal animation GIF here)*  
+🎥 **Watch the Demo Here:** [FinWiz on Devpost](https://devpost.com/software/finwiz-fywdtx)  
 
 ---
 
